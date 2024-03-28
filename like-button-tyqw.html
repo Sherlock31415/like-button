@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>点赞功能示例</title>
+    <style>
+      .like-btn {
+        cursor: pointer;
+        display: inline-block;
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="likeSection">
+      <button class="like-btn" onclick="handleLike()">
+        点赞(<span id="likeCount">0</span>)
+      </button>
+    </div>
+
+    <script>
+      function handleLike() {
+        let likeCount = parseInt(localStorage.getItem("likeCount")) || 0;
+        likeCount++;
+        localStorage.setItem("likeCount", likeCount);
+        document.getElementById("likeCount").innerText = likeCount;
+      }
+    </script>
+  </body>
+</html>
