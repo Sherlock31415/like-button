@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>点赞两次取消点赞</title>
+    <style>
+      .like-btn {
+        cursor: pointer;
+        font-size: 24px;
+        color: #ccc;
+      }
+      .liked {
+        color: #f00;
+      }
+    </style>
+    <script>
+      function like() {
+        var likeBtn = document.getElementById("likeBtn");
+        if (likeBtn.classList.contains("liked")) {
+          likeBtn.classList.remove("liked");
+          likeBtn.innerHTML = "&#x2665;";
+        } else {
+          likeBtn.classList.add("liked");
+          likeBtn.innerHTML = "&#x2764;";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button id="likeBtn" class="like-btn" onclick="like()">&#x2665;</button>
+  </body>
+</html>
